@@ -8,7 +8,7 @@ export function newIssueUrl(): string {
   );
   url.searchParams.set('labels', 'Publish');
   if (config.defaultLogin) {
-    url.searchParams.set('assignees', config.defaultLogin);
+    url.searchParams.set('assignees', config.defaultLogin || config.repoOwner);
   }
   return url.toString();
 }
